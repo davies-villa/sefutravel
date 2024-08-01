@@ -6,7 +6,7 @@
 }
 
 header {
-  height: auto;
+  height: 80vh;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/header_background.png');
   background-attachment: fixed;
@@ -109,6 +109,7 @@ nav {
   font-size: 50px;
   font-weight: 600;
   color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-paragraph {
@@ -408,7 +409,8 @@ nav {
 }
 
 .offers {
-  height: auto;
+
+  height: 70vh;
   width: 100%;
   background:
     linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.9)),
@@ -694,24 +696,21 @@ nav {
 
 
 .events {
-  height: auto;
+  height: 70vh;
   width: 100%;
-  background:
-    linear-gradient(to left, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)),
-    url('../img/simunye.jpg');
-  background-attachment: fixed;
+  background-image: url('../img/events.png');
   background-position: center;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  padding: 2rem;
 }
 
 .events-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -719,7 +718,6 @@ nav {
   display: flex;
   justify-content: start;
   width: 100%;
-  /* Ensures it spans the full width */
 }
 
 .events-btns a {
@@ -743,7 +741,7 @@ nav {
   display: inline-block;
   text-align: left;
   width: 100%;
-  padding: 2rem;
+  padding: 2rem !important;
   color: white;
 }
 
@@ -761,6 +759,7 @@ nav {
 }
 
 /* Blogs Section */
+/* Blogs Section */
 .blogs {
   padding: 2rem;
   background-color: #f9f9f9;
@@ -774,8 +773,7 @@ nav {
 
 .blog-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* Default: 2 columns */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 
@@ -786,6 +784,8 @@ nav {
   overflow: hidden;
   padding: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card:hover {
@@ -820,104 +820,71 @@ nav {
   color: #C38144;
 }
 
-
 .blog-info p {
   font-size: 1em;
   color: #6a6a6a;
   margin: 0;
+  flex-grow: 1;
 }
 
 /* Responsive Styles */
-@media (max-width: 992px) {
+@media (min-width: 768px) {
   .blog-container {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns on medium screens */
   }
 }
 
-@media (max-width: 768px) {
-  .blog-container {
-    grid-template-columns: 1fr;
-    /* 1 column on small screens */
-  }
-}
 
 
 
 
 footer {
-  height: 25vh;
-  width: 100%;
-  background: #C38144;
-  padding: 1rem;
-  color: #fff;
+  background-color: #C38144;
+  color: white;
+  padding: 40px 0;
 }
 
-.footer-items {
-  display: flex;
-  justify-content: center;
+footer h3,
+footer h5 {
+  color: #D9B189;
 }
 
-.subscribe {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.subscribe h3 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.subscribe-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.subscribe-form input {
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  width: 80%;
-  max-width: 300px;
-}
-
-.subscribe-form button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #C38144;
-  cursor: pointer;
-}
-
-.info1 {
-  display: flex;
-  flex-direction: column;
-}
-
-.info1 h5 {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.info1 ul {
-  list-style: none;
-  padding: 0;
-}
-
-.info1 li {
-  margin-bottom: 0.5rem;
-}
-
-.info1 a {
-  color: #fff;
+footer a {
+  color: #D9B189;
   text-decoration: none;
 }
 
-.info1 a:hover {
+footer a:hover {
   text-decoration: underline;
 }
+
+.subscribe-form {
+  background-color: #D9B189;
+  border-radius: 2px;
+  padding: 15px;
+}
+
+.subscribe-form input {
+  flex: 1;
+}
+
+.subscribe-form button {
+  flex-shrink: 0;
+  border: none;
+}
+
+.subscribe-btn {
+  text-decoration: none;
+  padding: 5px 20px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background: #C38144;
+}
+
+@media (max-width: 767px) {
+  .subscribe-form {
+    flex-direction: column;
+  }
+} 
